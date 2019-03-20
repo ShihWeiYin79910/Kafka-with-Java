@@ -51,7 +51,7 @@ public class KafkaConsumerTest implements Runnable {
 					String[] tStringArrary = record.value().split("\\$@\\$");
 					
 					//Data Transformation
-					String tBornYear = tStringArrary[tStringArrary.length-2] + 1911;
+					int tBornYear = Integer.parseInt(tStringArrary[tStringArrary.length-2]) + 1911;
 					String tFlag = tStringArrary[tStringArrary.length-1].trim();
 					if (tFlag.toLowerCase() == "yes" || tFlag.toLowerCase() == "ok") {
 						tFlag = "T";
